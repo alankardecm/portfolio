@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan Moreira — Consultor BI, IA & Dados | AM Consultoria</title>
+    <meta name="description" content="Alan Moreira é especialista em Power BI, Inteligência Artificial e Engenharia de Dados. Fundador da AM Consultoria. Soluções em dashboards, agentes de IA e automação para empresas em Campinas e Brasil.">
+    <meta name="keywords" content="Power BI Campinas, consultoria IA, agente IA, LangChain, CrewAI, engenharia de dados, dashboard, ETL, analytics, AM Consultoria, churn prediction, automação dados">
+    <meta name="author" content="Alan Moreira">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://alan-moreira-portfolio.vercel.app/">
+
+    <!-- Open Graph / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alan-moreira-portfolio.vercel.app/">
+    <meta property="og:title" content="Alan Moreira — Consultor BI, IA & Dados">
+    <meta property="og:description" content="Especialista em Power BI, agentes de IA e engenharia de dados. Fundador da AM Consultoria. Transformo dados em decisões para negócios.">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Alan Moreira — Consultor BI, IA & Dados">
+    <meta name="twitter:description" content="Especialista em Power BI, agentes de IA e engenharia de dados. Fundador da AM Consultoria.">
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alan Moreira",
+      "jobTitle": "Consultor BI, IA & Dados",
+      "url": "https://alan-moreira-portfolio.vercel.app",
+      "sameAs": [
+        "https://www.linkedin.com/in/alanmkardec",
+        "https://github.com/alankardecm"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "AM Consultoria"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Scanlines overlay -->
+    <div class="scanlines"></div>
+
+    <!-- ── Navbar ────────────────────────────────────────────── -->
+    <nav id="navbar">
+        <div class="nav-brand">
+            <div class="nav-logo">AM</div>
+            Alan Moreira
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="#about">Sobre</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projetos</a>
+            <a href="#stats">Impacto</a>
+            <a href="#contact" class="nav-cta">Contato</a>
+        </div>
+        <button class="hamburger" id="hamburger">☰</button>
+    </nav>
+
+    <!-- ── Hero ──────────────────────────────────────────────── -->
+    <section id="hero">
+        <div class="hero-bg-glow">
+            <div class="glow-1"></div>
+            <div class="glow-2"></div>
+        </div>
+        <div class="grid-overlay"></div>
+        <canvas id="matrix-canvas"></canvas>
+        <canvas id="particles-canvas"></canvas>
+
+        <!-- HUD corners -->
+        <div class="hud-corner hud-tl"></div>
+        <div class="hud-corner hud-tr"></div>
+        <div class="hud-corner hud-bl"></div>
+        <div class="hud-corner hud-br"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Disponível para novos projetos
+            </div>
+
+            <h1 class="hero-name">
+                Olá, sou <span class="glitch" data-text="Alan Moreira">Alan Moreira</span> 👋
+            </h1>
+
+            <p class="hero-role">
+                Especialista em <span class="typed-text" id="typed"></span><span class="cursor"></span>
+            </p>
+
+            <p class="hero-desc">
+                Transformo dados em decisões com Power BI, Python e Inteligência Artificial.
+                Construo sistemas, dashboards e agentes de IA que geram resultado real para negócios.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#projects" class="btn-hero-primary">Ver Projetos 🚀</a>
+                <a href="#contact" class="btn-hero-secondary">Falar comigo 💬</a>
+            </div>
+
+            <div class="terminal-wrap">
+                <div class="terminal-top">
+                    <div class="t-dot t-dot-r"></div>
+                    <div class="t-dot t-dot-y"></div>
+                    <div class="t-dot t-dot-g"></div>
+                    <span class="terminal-filename">~/alan-moreira $ python agent.py</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="t-line"><span class="t-prompt">❯</span><span class="t-cmd">from crewai import Agent,
+                            Crew, Task</span></div>
+                    <div class="t-line"><span class="t-prompt">❯</span><span class="t-cmd">from langchain_openai import
+                            ChatOpenAI</span></div>
+                    <div class="t-line" style="margin-top:.4rem">
+                        <span class="t-out"><span>✔</span> LLM carregado: gpt-4o · temp=0.2</span>
+                    </div>
+                    <div class="t-line">
+                        <span class="t-out"><span>✔</span> Agentes: Analyst, Coder, Validator — online</span>
+                    </div>
+                    <div class="t-line">
+                        <span class="t-out"><span>✔</span> RAG indexado: 142 docs · ChromaDB ready</span>
+                    </div>
+                    <div class="t-line" style="margin-top:.4rem">
+                        <span class="t-prompt">❯</span><span class="t-cmd">crew.kickoff()</span><span
+                            class="t-cursor-blink"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-num">13+</div>
+                    <div class="hero-stat-label">Projetos entregues</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">3+</div>
+                    <div class="hero-stat-label">Anos de experiência</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">10+</div>
+                    <div class="hero-stat-label">Tecnologias</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">100%</div>
+                    <div class="hero-stat-label">Foco em resultado</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ── Tech Ticker ──────────────────────────────────────── -->
+    <div class="tech-ticker">
+        <div class="ticker-track">
+            <span class="ticker-item">⚡ Python</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">📊 Power BI</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">🤖 LangChain</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">🧠 CrewAI</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">🗄️ SQL / MySQL</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">☁️ OpenAI GPT-4</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">⚙️ n8n</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">🔄 ETL Pipelines</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">⚛️ React</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">🔥 NestJS</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">🐙 LangGraph</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">📦 Docker</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">🗂️ ChromaDB</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">🌊 Supabase</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">📈 Scikit-learn</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">🦙 Ollama</span><span class="ticker-sep">◆</span>
+            <!-- duplicate for seamless loop -->
+            <span class="ticker-item">⚡ Python</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">📊 Power BI</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">🤖 LangChain</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">🧠 CrewAI</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">🗄️ SQL / MySQL</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">☁️ OpenAI GPT-4</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">⚙️ n8n</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">🔄 ETL Pipelines</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">⚛️ React</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">🔥 NestJS</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">🐙 LangGraph</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">📦 Docker</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">🗂️ ChromaDB</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">🌊 Supabase</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">📈 Scikit-learn</span><span class="ticker-sep">◆</span>
+            <span class="ticker-item">🦙 Ollama</span><span class="ticker-sep">◆</span>
+        </div>
+    </div>
+
+    <!-- ── About ─────────────────────────────────────────────── -->
+
+    <section id="about">
+        <div class="about-grid reveal">
+            <div class="about-visual">
+                <div class="about-avatar-wrap">
+                    <div class="avatar-ring2"></div>
+                    <div class="avatar-ring"></div>
+                    <div class="about-avatar">AM</div>
+                </div>
+                <div class="about-badge-float badge-f1">
+                    <span class="badge-icon">🤖</span>
+                    <div>
+                        <div style="font-size:.7rem;color:var(--t3)">Especialidade</div>
+                        <div>IA & Automação</div>
+                    </div>
+                </div>
+                <div class="about-badge-float badge-f2">
+                    <span class="badge-icon">📊</span>
+                    <div>
+                        <div style="font-size:.7rem;color:var(--t3)">Destaque</div>
+                        <div>Power BI Expert</div>
+                    </div>
+                </div>
+                <div class="about-badge-float badge-f3">
+                    <span class="badge-icon">🏆</span>
+                    <div>
+                        <div style="font-size:.7rem;color:var(--t3)">Projetos</div>
+                        <div>13+ entregues</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-text">
+                <div class="section-tag">✦ Sobre mim</div>
+                <h2 class="section-title">Dados que <span>contam histórias</span>, sistemas que geram valor</h2>
+                <p>
+                    Sou desenvolvedor especializado em <strong>Inteligência Artificial, BI &amp; Dashboards</strong> e
+                    análise de dados, com <strong>Pós-graduação em Ciência de Dados &amp; Big Data Analytics</strong>.
+                    Meu trabalho é transformar dados brutos em insights acionáveis e construir ferramentas que
+                    automatizam decisões de negócio.
+                </p>
+                <p>
+                    Tenho experiência com o ciclo completo: da ingestão de dados (ETL/Python) até
+                    a visualização final em dashboards executivos (Power BI) e a inteligência embarcada via modelos de
+                    ML, LLMs e agentes autônomos com <strong>LangChain, CrewAI e LangGraph</strong>.
+                </p>
+                <p>
+                    Já entreguei projetos de <strong>predição de churn, KPIs operacionais, CRM com IA,
+                        pipelines de dados, agentes multi-agente e assistentes conversacionais</strong> — sempre com
+                    foco em
+                    resultado de negócio.
+                </p>
+                <div class="about-highlights">
+                    <span class="highlight-tag">📊 Power BI</span>
+                    <span class="highlight-tag">🐍 Python</span>
+                    <span class="highlight-tag">🤖 OpenAI</span>
+                    <span class="highlight-tag">⚙️ n8n</span>
+                    <span class="highlight-tag">🗄️ SQL / MySQL</span>
+                    <span class="highlight-tag">🔄 ETL</span>
+                    <span class="highlight-tag">📈 Machine Learning</span>
+                    <span class="highlight-tag">🤖 CrewAI / LangChain</span>
+                    <span class="highlight-tag">🌐 HTML/CSS/JS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Skills ─────────────────────────────────────────────── -->
+    <div id="skills">
+        <div class="skills-inner">
+            <div class="reveal" style="text-align:center;margin-bottom:.5rem">
+                <div class="section-tag">✦ Stack técnico</div>
+                <h2 class="section-title">Skills & <span>Tecnologias</span></h2>
+                <p class="section-sub" style="margin:0 auto">Ferramentas que uso no dia a dia para criar soluções de
+                    dados e IA</p>
+            </div>
+            <div class="skills-grid reveal">
+
+                <div class="skill-card" style="--skill-color:#f2c811">
+                    <div class="skill-icon">📊</div>
+                    <div class="skill-name">Power BI</div>
+                    <div class="skill-level">Avançado</div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="95" style="background:#f2c811"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card" style="--skill-color:#3776AB">
+                    <div class="skill-icon">🐍</div>
+                    <div class="skill-name">Python</div>
+                    <div class="skill-level">Avançado</div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="88" style="background:#3776AB"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card" style="--skill-color:#00758f">
+                    <div class="skill-icon">🗄️</div>
+                    <div class="skill-name">SQL / MySQL</div>
+                    <div class="skill-level">Avançado</div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="85" style="background:#00758f"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card" style="--skill-color:#10b981">
+                    <div class="skill-icon">🤖</div>
+                    <div class="skill-name">OpenAI / LLMs</div>
+                    <div class="skill-level">Intermediário+</div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="80" style="background:#10b981"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card" style="--skill-color:#EA4B71">
+                    <div class="skill-icon">⚙️</div>
+                    <div class="skill-name">n8n</div>
+                    <div class="skill-level">Intermediário+</div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="82" style="background:#EA4B71"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card" style="--skill-color:#f59e0b">
+                    <div class="skill-icon">📈</div>
+                    <div class="skill-name">Machine Learning</div>
+                    <div class="skill-level">Intermediário</div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="72" style="background:#f59e0b"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card" style="--skill-color:#e34f26">
+                    <div class="skill-icon">🌐</div>
+                    <div class="skill-name">HTML/CSS/JS</div>
+                    <div class="skill-level">Avançado</div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="87" style="background:#e34f26"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card" style="--skill-color:#61dafb">
+                    <div class="skill-icon">⚛️</div>
+                    <div class="skill-name">React</div>
+                    <div class="skill-level">Intermediário</div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="68" style="background:#61dafb"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card" style="--skill-color:#4479A1">
+                    <div class="skill-icon">🔄</div>
+                    <div class="skill-name">ETL / Pipelines</div>
+                    <div class="skill-level">Avançado</div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="85" style="background:#4479A1"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card" style="--skill-color:#FFCA28">
+                    <div class="skill-icon">🔥</div>
+                    <div class="skill-name">Firebase</div>
+                    <div class="skill-level">Intermediário</div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="65" style="background:#FFCA28"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card" style="--skill-color:#4285F4">
+                    <div class="skill-icon">☁️</div>
+                    <div class="skill-name">APIs & REST</div>
+                    <div class="skill-level">Avançado</div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="83" style="background:#4285F4"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card" style="--skill-color:#F05032">
+                    <div class="skill-icon">🐙</div>
+                    <div class="skill-name">Git / GitHub</div>
+                    <div class="skill-level">Intermediário</div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" data-width="70" style="background:#F05032"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ── Projects ───────────────────────────────────────────── -->
+    <section id="projects">
+        <div class="reveal" style="text-align:center;margin-bottom:.5rem">
+            <div class="section-tag">✦ Portfólio</div>
+            <h2 class="section-title">Projetos em <span>destaque</span></h2>
+            <p class="section-sub" style="margin:0 auto">Soluções reais entregues — de pipelines de dados a sistemas com
+                IA embarcada</p>
+        </div>
+
+        <div class="filter-bar reveal">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="bi">BI & Dashboards</button>
+            <button class="filter-btn" data-filter="ia">IA & Automação</button>
+            <button class="filter-btn" data-filter="dev">Desenvolvimento</button>
+            <button class="filter-btn" data-filter="data">Engenharia de Dados</button>
+        </div>
+
+        <div class="projects-grid reveal">
+
+            <!-- 1 - CRM IA -->
+            <div class="project-card" data-cat="dev" style="--ph-from:rgba(124,58,237,.18);--ph-to:rgba(0,212,255,.08)">
+                <div class="project-header">
+                    <div class="project-emoji">🧠</div>
+                    <div>
+                        <div class="project-cat" style="--cat-color:var(--violet2)">IA & Desenvolvimento</div>
+                        <div class="project-name">Nexus AI CRM</div>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <p class="project-desc">
+                        CRM completo para consultoria de IA com agente NEXUS contextual por perfil (Dono, Operador,
+                        Cliente).
+                        Dashboards KPI, Kanban drag-and-drop, BI interativo e gestão de clientes/projetos.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">HTML/CSS/JS</span>
+                        <span class="tag">AI Agent</span>
+                        <span class="tag">Chart.js</span>
+                        <span class="tag">localStorage</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <div class="project-status">
+                        <div class="status-dot-p" style="background:var(--green)"></div> Concluído
+                    </div>
+                    <a class="project-link" href="https://github.com/alankardecm" target="_blank">Ver no GitHub ↗</a>
+                </div>
+            </div>
+
+            <!-- 2 - KPI NOC -->
+            <div class="project-card" data-cat="bi" style="--ph-from:rgba(242,200,17,.12);--ph-to:rgba(0,212,255,.06)">
+                <div class="project-header">
+                    <div class="project-emoji">📡</div>
+                    <div>
+                        <div class="project-cat" style="--cat-color:var(--yellow)">BI & Dashboards</div>
+                        <div class="project-name">KPI NOC Dashboard</div>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <p class="project-desc">
+                        Dashboard operacional completo para Centro de Operações de Rede (NOC).
+                        ETL automatizado via Python + MySQL, atualização agendada e indicadores de SLA, rechamados, CSAT
+                        e churn em Power BI.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Power BI</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">DAX</span>
+                        <span class="tag">ODBC</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <div class="project-status">
+                        <div class="status-dot-p" style="background:var(--green)"></div> Em produção
+                    </div>
+                    <span class="project-link" style="cursor:default;opacity:.5">Power BI ↗</span>
+                </div>
+            </div>
+
+            <!-- 3 - Churn Prediction -->
+            <div class="project-card" data-cat="ia" style="--ph-from:rgba(239,68,68,.12);--ph-to:rgba(124,58,237,.08)">
+                <div class="project-header">
+                    <div class="project-emoji">📉</div>
+                    <div>
+                        <div class="project-cat" style="--cat-color:var(--pink)">IA & Machine Learning</div>
+                        <div class="project-name">Churn Prediction System</div>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <p class="project-desc">
+                        Sistema de predição de churn com scoring de risco por cliente.
+                        Modelo ML com features calibradas em dados históricos, lista de prioridade de retenção e
+                        dashboard Power BI integrado.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Power BI</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <div class="project-status">
+                        <div class="status-dot-p" style="background:var(--green)"></div> Em produção
+                    </div>
+                    <span class="project-link" style="cursor:default;opacity:.5">Confidencial</span>
+                </div>
+            </div>
+
+            <!-- 4 - JARVIS -->
+            <div class="project-card" data-cat="ia" style="--ph-from:rgba(16,185,129,.12);--ph-to:rgba(0,212,255,.08)">
+                <div class="project-header">
+                    <div class="project-emoji">🤖</div>
+                    <div>
+                        <div class="project-cat" style="--cat-color:var(--green)">IA & Automação</div>
+                        <div class="project-name">JARVIS — Assistente IA</div>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <p class="project-desc">
+                        Assistente pessoal com IA via WhatsApp. Processa áudio (Whisper), visão (OCR), gerencia finanças
+                        pessoais,
+                        registra transações automaticamente e responde em linguagem natural via OpenAI.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">n8n</span>
+                        <span class="tag">OpenAI</span>
+                        <span class="tag">WhatsApp</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">Whisper</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <div class="project-status">
+                        <div class="status-dot-p" style="background:var(--green)"></div> Em produção
+                    </div>
+                    <span class="project-link" style="cursor:default;opacity:.5">n8n Workflow</span>
+                </div>
+            </div>
+
+            <!-- 5 - ESCALA APP -->
+            <div class="project-card" data-cat="dev" style="--ph-from:rgba(0,212,255,.1);--ph-to:rgba(16,185,129,.08)">
+                <div class="project-header">
+                    <div class="project-emoji">🗓️</div>
+                    <div>
+                        <div class="project-cat" style="--cat-color:var(--cyan)">Desenvolvimento</div>
+                        <div class="project-name">ESCALA APP</div>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <p class="project-desc">
+                        Aplicativo web de gestão de escala de funcionários. Calcula automaticamente horas extras,
+                        plantões, turnos e horas trabalhadas.
+                        Interface interativa com calendário visual e exportação de relatórios.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">HTML/CSS/JS</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Cálculo de Horas</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <div class="project-status">
+                        <div class="status-dot-p" style="background:var(--green)"></div> Concluído
+                    </div>
+                    <a class="project-link" href="https://github.com/alankardecm" target="_blank">Ver no GitHub ↗</a>
+                </div>
+            </div>
+
+            <!-- 6 - FitAI Pro -->
+            <div class="project-card" data-cat="dev"
+                style="--ph-from:rgba(244,114,182,.12);--ph-to:rgba(124,58,237,.08)">
+                <div class="project-header">
+                    <div class="project-emoji">🥗</div>
+                    <div>
+                        <div class="project-cat" style="--cat-color:var(--pink)">Dev + IA</div>
+                        <div class="project-name">FitAI Pro (NutriSnap)</div>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <p class="project-desc">
+                        Aplicativo de nutrição com coach de IA. Chat inteligente com contexto do perfil do usuário,
+                        análise de fotos de refeições, contagem calórica e recomendações personalizadas via OpenAI.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Firebase</span>
+                        <span class="tag">OpenAI</span>
+                        <span class="tag">n8n</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <div class="project-status">
+                        <div class="status-dot-p" style="background:var(--yellow)"></div> Em desenvolvimento
+                    </div>
+                    <span class="project-link" style="cursor:default;opacity:.5">Em breve ↗</span>
+                </div>
+            </div>
+
+            <!-- 7 - ETL DataLake -->
+            <div class="project-card" data-cat="data" style="--ph-from:rgba(0,118,143,.14);--ph-to:rgba(0,212,255,.06)">
+                <div class="project-header">
+                    <div class="project-emoji">🔄</div>
+                    <div>
+                        <div class="project-cat" style="--cat-color:#00d4ff">Engenharia de Dados</div>
+                        <div class="project-name">Pipeline ETL / DataLake</div>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <p class="project-desc">
+                        Pipeline ETL completo migrando dados de CSVs/Excel para DataLake MySQL.
+                        Normalização, agendamento via Task Scheduler, integração ODBC com Power BI para refresh
+                        server-side.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">ODBC</span>
+                        <span class="tag">Power BI</span>
+                        <span class="tag">TMDL</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <div class="project-status">
+                        <div class="status-dot-p" style="background:var(--green)"></div> Em produção
+                    </div>
+                    <span class="project-link" style="cursor:default;opacity:.5">Confidencial</span>
+                </div>
+            </div>
+
+            <!-- 8 - Mapa Rompimento -->
+            <div class="project-card" data-cat="bi" style="--ph-from:rgba(245,158,11,.12);--ph-to:rgba(239,68,68,.06)">
+                <div class="project-header">
+                    <div class="project-emoji">🗺️</div>
+                    <div>
+                        <div class="project-cat" style="--cat-color:var(--yellow)">BI & Dashboards</div>
+                        <div class="project-name">Mapa de Rompimentos</div>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <p class="project-desc">
+                        Dashboard georreferenciado para monitoramento de rompimentos de fibra óptica em tempo real.
+                        Mapa interativo com heat map de incidências, SLA por região e alertas automáticos.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Power BI</span>
+                        <span class="tag">GIS / Mapa</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">DAX</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <div class="project-status">
+                        <div class="status-dot-p" style="background:var(--green)"></div> Em produção
+                    </div>
+                    <span class="project-link" style="cursor:default;opacity:.5">Confidencial</span>
+                </div>
+            </div>
+
+
+            <!-- 9 - NutriSnap -->
+            <div class="project-card" data-cat="ia"
+                style="--ph-from:rgba(16,185,129,.14);--ph-to:rgba(244,114,182,.08)">
+                <div class="project-header">
+                    <div class="project-emoji">📱</div>
+                    <div>
+                        <div class="project-cat" style="--cat-color:var(--green)">IA & Saúde</div>
+                        <div class="project-name">NutriSnap — Monitor Nutricional IA</div>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <p class="project-desc">
+                        App mobile de monitoramento nutricional com IA. Tira foto do prato e a IA identifica todos os
+                        alimentos,
+                        calcula macronutrientes automaticamente, compara com a dieta do nutricionista e dá score de
+                        aderência com sugestões personalizadas.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">React Native</span>
+                        <span class="tag">OpenAI Vision</span>
+                        <span class="tag">Supabase</span>
+                        <span class="tag">n8n</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <div class="project-status">
+                        <div class="status-dot-p" style="background:var(--yellow)"></div> Em desenvolvimento
+                    </div>
+                    <a class="project-link" href="https://github.com/alankardecm/calai-app" target="_blank">GitHub ↗</a>
+                </div>
+            </div>
+
+            <!-- 10 - CRM Limpa Nome -->
+            <div class="project-card" data-cat="dev" style="--ph-from:rgba(124,58,237,.15);--ph-to:rgba(239,68,68,.08)">
+                <div class="project-header">
+                    <div class="project-emoji">🛡️</div>
+                    <div>
+                        <div class="project-cat" style="--cat-color:var(--violet2)">CRM & SaaS</div>
+                        <div class="project-name">CRM Limpa Nome</div>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <p class="project-desc">
+                        CRM completo para escritórios de regularização de crédito. Gerencia todo o ciclo: captação de
+                        leads via Google Forms,
+                        negativações BACEN, processos judiciais com liminar, pipeline de vendas, documentos PDF e
+                        dashboard com KPIs da operação.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Next.js</span>
+                        <span class="tag">Supabase</span>
+                        <span class="tag">Vercel</span>
+                        <span class="tag">REST API</span>
+                        <span class="tag">Google Forms</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <div class="project-status">
+                        <div class="status-dot-p" style="background:var(--green)"></div> Concluído
+                    </div>
+                    <a class="project-link" href="https://github.com/alankardecm/limpanome" target="_blank">GitHub ↗</a>
+                </div>
+            </div>
+
+            <!-- 11 - GranaBot Finance -->
+            <div class="project-card" data-cat="ia" style="--ph-from:rgba(16,185,129,.12);--ph-to:rgba(245,158,11,.08)">
+                <div class="project-header">
+                    <div class="project-emoji">💰</div>
+                    <div>
+                        <div class="project-cat" style="--cat-color:var(--green)">IA & Finanças</div>
+                        <div class="project-name">GranaBot Finance Web</div>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <p class="project-desc">
+                        Plataforma web de controle financeiro pessoal integrada ao GranaBot via WhatsApp.
+                        Backend Node.js/NestJS com Prisma ORM + PostgreSQL, webhook n8n para processar mensagens e
+                        frontend com dashboard de gastos, metas e relatórios.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">NestJS</span>
+                        <span class="tag">Prisma</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">n8n</span>
+                        <span class="tag">Docker</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <div class="project-status">
+                        <div class="status-dot-p" style="background:var(--green)"></div> Concluído
+                    </div>
+                    <a class="project-link" href="https://github.com/alankardecm/granabot-finance"
+                        target="_blank">GitHub ↗</a>
+                </div>
+            </div>
+
+            <!-- 12 - LangChain/CrewAI Agents -->
+            <div class="project-card" data-cat="ia" style="--ph-from:rgba(124,58,237,.18);--ph-to:rgba(0,212,255,.12)">
+                <div class="project-header">
+                    <div class="project-emoji">🧬</div>
+                    <div>
+                        <div class="project-cat" style="--cat-color:var(--violet2)">IA Multi-Agente</div>
+                        <div class="project-name">Agentes IA — LangChain &amp; CrewAI</div>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <p class="project-desc">
+                        Sistema de agentes de IA autônomos e colaborativos usando LangChain e CrewAI.
+                        Arquitetura multi-agente com papéis especializados, memória persistente, RAG sobre bases de
+                        conhecimento
+                        customizadas e orquestração de tarefas complexas via LangGraph.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">LangChain</span>
+                        <span class="tag">CrewAI</span>
+                        <span class="tag">LangGraph</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">RAG</span>
+                        <span class="tag">OpenAI</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <div class="project-status">
+                        <div class="status-dot-p" style="background:var(--yellow)"></div> Em desenvolvimento
+                    </div>
+                    <span class="project-link" style="cursor:default;opacity:.5">Em breve ↗</span>
+                </div>
+            </div>
+
+            <!-- 13 - TelecomAgent -->
+            <div class="project-card" data-cat="ia" style="--ph-from:rgba(0,212,255,.14);--ph-to:rgba(124,58,237,.1)">
+                <div class="project-header">
+                    <div class="project-emoji">📡</div>
+                    <div>
+                        <div class="project-cat" style="--cat-color:var(--cyan)">IA Multi-Agente</div>
+                        <div class="project-name">TelecomAgent — IA para ISPs</div>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <p class="project-desc">
+                        Agente IA multi-agente autônomo para troubleshooting de redes FTTH/GPON.
+                        Analisa logs de erro (OLT, ONU, BGP, OSPF) com 4 agentes especializados (Analyzer, RAG Expert,
+                        Troubleshooter, Validator),
+                        RAG com manuais Huawei/Cisco e mapa de calor de falhas. Reduz análise de horas para minutos.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">CrewAI</span>
+                        <span class="tag">LangChain</span>
+                        <span class="tag">ChromaDB</span>
+                        <span class="tag">Streamlit</span>
+                        <span class="tag">Ollama</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <div class="project-status">
+                        <div class="status-dot-p" style="background:var(--green)"></div> Open Source
+                    </div>
+                    <a class="project-link" href="https://github.com/alankardecm/TelecomAgent" target="_blank">GitHub
+                        ↗</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── Stats ──────────────────────────────────────────────── -->
+    <div id="stats">
+        <div class="stats-inner">
+            <div class="reveal" style="text-align:center;margin-bottom:3rem">
+                <div class="section-tag">✦ Impacto</div>
+                <h2 class="section-title">Números que <span>importam</span></h2>
+            </div>
+            <div class="stats-grid reveal">
+                <div class="stat-card">
+                    <div class="stat-icon">📁</div>
+                    <div class="stat-num" data-target="12" data-suffix="+">0+</div>
+                    <div class="stat-label">Projetos entregues</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-num" data-target="5" data-suffix="+">0+</div>
+                    <div class="stat-label">Dashboards Power BI em produção</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🤖</div>
+                    <div class="stat-num" data-target="3" data-suffix="+">0+</div>
+                    <div class="stat-label">Agentes de IA desenvolvidos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⚙️</div>
+                    <div class="stat-num" data-target="10" data-suffix="+">0+</div>
+                    <div class="stat-label">Tecnologias dominadas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🔄</div>
+                    <div class="stat-num" data-target="100" data-suffix="k+">0k+</div>
+                    <div class="stat-label">Linhas processadas por pipeline</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-num" data-target="3" data-suffix="+">0+</div>
+                    <div class="stat-label">Anos de experiência</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ── AM Consultoria ───────────────────────────────────── -->
+    <div id="am-consultoria" style="background:var(--bg2);max-width:100%;padding:5rem 2rem;">
+        <div style="max-width:1200px;margin:0 auto;" class="reveal">
+            <div style="text-align:center;margin-bottom:3rem">
+                <div class="section-tag">✦ Fundador</div>
+                <h2 class="section-title">AM <span>Consultoria</span></h2>
+                <p class="section-sub" style="margin:0 auto">
+                    Além de projetos freelancer, construo e opero produtos próprios de dados e IA para o mercado.
+                </p>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;">
+
+                <div style="background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);padding:2rem;position:relative;overflow:hidden;">
+                    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--cyan),var(--violet))"></div>
+                    <div style="font-size:2.5rem;margin-bottom:1rem">🏢</div>
+                    <h3 style="font-size:1.2rem;font-weight:800;margin-bottom:.75rem">AM Consultoria</h3>
+                    <p style="color:var(--t2);font-size:.9rem;line-height:1.7;margin-bottom:1.25rem">
+                        Consultoria especializada em <strong style="color:var(--t1)">BI, Engenharia de Dados e IA aplicada</strong>.
+                        Atendo empresas de médio porte — ISPs, telecomunicações e serviços — que precisam transformar
+                        dados operacionais em inteligência de negócio acionável.
+                    </p>
+                    <div style="display:flex;flex-wrap:wrap;gap:.5rem">
+                        <span class="highlight-tag">Power BI</span>
+                        <span class="highlight-tag">ETL / Python</span>
+                        <span class="highlight-tag">Agentes de IA</span>
+                        <span class="highlight-tag">Dashboards Executivos</span>
+                    </div>
+                </div>
+
+                <div style="background:var(--card);border:1px solid var(--border2);border-radius:var(--r2);padding:2rem;position:relative;overflow:hidden;">
+                    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--violet),var(--pink))"></div>
+                    <div style="font-size:2.5rem;margin-bottom:1rem">🎯</div>
+                    <h3 style="font-size:1.2rem;font-weight:800;margin-bottom:.75rem">Verticais de atuação</h3>
+                    <div style="display:flex;flex-direction:column;gap:.75rem">
+                        <div style="display:flex;align-items:center;gap:.75rem;color:var(--t2);font-size:.88rem">
+                            <span style="color:var(--green);font-weight:700">▶</span> ISPs & Telecomunicações
+                        </div>
+                        <div style="display:flex;align-items:center;gap:.75rem;color:var(--t2);font-size:.88rem">
+                            <span style="color:var(--green);font-weight:700">▶</span> Operações & NOC / Help Desk
+                        </div>
+                        <div style="display:flex;align-items:center;gap:.75rem;color:var(--t2);font-size:.88rem">
+                            <span style="color:var(--green);font-weight:700">▶</span> CRM & Retenção de Clientes com IA
+                        </div>
+                        <div style="display:flex;align-items:center;gap:.75rem;color:var(--t2);font-size:.88rem">
+                            <span style="color:var(--green);font-weight:700">▶</span> Automação de Processos com Agentes
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- ── Contact ────────────────────────────────────────────── -->
+    <section id="contact">
+        <div class="contact-grid reveal">
+            <div class="contact-info">
+                <div class="section-tag">✦ Contato</div>
+                <h2 class="section-title">Vamos <span>trabalhar juntos</span></h2>
+                <p>
+                    Tem um projeto de dados, BI, IA ou automação que precisa sair do papel?
+                    Me manda uma mensagem — adoro transformar problemas complexos em soluções elegantes.
+                </p>
+
+                <div class="contact-links">
+                    <a class="contact-link-item" href="mailto:alan.moreira@amconsultoria.site">
+                        <div class="contact-link-icon">✉️</div>
+                        <div>
+                            <div class="contact-link-label">E-mail</div>
+                            <div class="contact-link-value">alan.moreira@amconsultoria.site</div>
+                        </div>
+                    </a>
+                    <a class="contact-link-item" href="https://www.linkedin.com/in/alan-kardec-moreira-b197b736"
+                        target="_blank">
+                        <div class="contact-link-icon">💼</div>
+                        <div>
+                            <div class="contact-link-label">LinkedIn</div>
+                            <div class="contact-link-value">linkedin.com/in/alan-kardec-moreira</div>
+                        </div>
+                    </a>
+                    <a class="contact-link-item" href="https://wa.me/5519995483158" target="_blank">
+                        <div class="contact-link-icon">📱</div>
+                        <div>
+                            <div class="contact-link-label">WhatsApp</div>
+                            <div class="contact-link-value">Clique para conversar</div>
+                        </div>
+                    </a>
+                    <a class="contact-link-item" href="https://github.com/alankardecm" target="_blank">
+                        <div class="contact-link-icon">🐙</div>
+                        <div>
+                            <div class="contact-link-label">GitHub</div>
+                            <div class="contact-link-value">github.com/alankardecm</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <div class="contact-form">
+                    <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.5rem">Enviar mensagem 💬</h3>
+                    <form id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Nome</label>
+                                <input type="text" class="form-control" placeholder="Seu nome" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">E-mail</label>
+                                <input type="email" class="form-control" placeholder="seu@email.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Assunto</label>
+                            <select class="form-control">
+                                <option>Projeto de BI / Dashboard</option>
+                                <option>Solução com IA</option>
+                                <option>Pipeline de Dados / ETL</option>
+                                <option>Desenvolvimento Web</option>
+                                <option>Consultoria</option>
+                                <option>Outro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Mensagem</label>
+                            <textarea class="form-control" placeholder="Conte um pouco sobre seu projeto..."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Enviar Mensagem ✉️</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── Footer ─────────────────────────────────────────────── -->
+    <footer>
+        <p>Desenvolvido com 💜 por <span>Alan Moreira</span> · BI & IA · 2026</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
