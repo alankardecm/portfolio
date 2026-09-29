@@ -53,3 +53,34 @@ document.addEventListener('DOMContentLoaded', () => {
     result.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
   });
 });
+// Accessible service tabs and a transparent operational capacity simulation.
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = [...document.querySelectorAll('.service-tab')];
+  const activate = (tab, focus = false) => {
+    tabs.forEach(t => { const active = t === tab; t.setAttribute('aria-selected', String(active)); t.tabIndex = active ? 0 : -1; document.getElementById(t.getAttribute('aria-controls')).hidden = !active; });
+    if (focus) tab.focus();
+  };
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => activate(tab));
+    tab.addEventListener('keydown', e => {
+      let next = null;
+      if(e.key === 'ArrowRight' || e.key === 'ArrowDown') next = tabs[(index + 1) % tabs.length];
+      if(e.key === 'ArrowLeft' || e.key === 'ArrowUp') next = tabs[(index - 1 + tabs.length) % tabs.length];
+      if(e.key === 'Home') next = tabs[0];
+      if(e.key === 'End') next = tabs[tabs.length - 1];
+      if(next) { e.preventDefault(); activate(next, true); }
+    });
+  });
+  const hours = document.querySelector('#value-hours');
+  if(!hours) return;
+  const hourly = document.querySelector('#value-hour-cost');
+  const recovery = document.querySelector('#value-recovery');
+  const bounded = el => Math.min(Number(el.max), Math.max(Number(el.min), Number(el.value) || 0));
+  const update = () => {
+    const time = bounded(hours) * bounded(recovery) / 100;
+    document.querySelector('#value-time').textContent = new Intl.NumberFormat('pt-BR', {maximumFractionDigits: 1}).format(time);
+    document.querySelector('#value-output').textContent = new Intl.NumberFormat('pt-BR', {style:'currency', currency:'BRL', maximumFractionDigits:0}).format(time * bounded(hourly));
+  };
+  [hours, hourly, recovery].forEach(el => el.addEventListener('input', update));
+  update();
+});
