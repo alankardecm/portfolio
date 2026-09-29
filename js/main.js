@@ -1,195 +1,55 @@
-// ============================================================
-//  PORTFOLIO — Alan Moreira | main.js
-// ============================================================
-
-// ── Navbar scroll ────────────────────────────────────────────
-window.addEventListener('scroll', () => {
-    const nav = document.getElementById('navbar');
-    nav.classList.toggle('scrolled', window.scrollY > 40);
-});
-
-// ── Hamburger ────────────────────────────────────────────────
-document.getElementById('hamburger').addEventListener('click', () => {
-    document.getElementById('nav-links').classList.toggle('open');
-});
-document.querySelectorAll('#nav-links a').forEach(a => {
-    a.addEventListener('click', () => document.getElementById('nav-links').classList.remove('open'));
-});
-
-// ── Typing animation ─────────────────────────────────────────
-const roles = ['Desenvolvedor', 'BI & Dashboards', 'IA & Automação', 'Engenheiro de Dados', 'Power BI Specialist'];
-let rolei = 0, chari = 0, deleting = false;
-const typedEl = document.getElementById('typed');
-
-function type() {
-    const current = roles[rolei];
-    if (!deleting) {
-        typedEl.textContent = current.slice(0, ++chari);
-        if (chari === current.length) { deleting = true; setTimeout(type, 2000); return; }
-    } else {
-        typedEl.textContent = current.slice(0, --chari);
-        if (chari === 0) { deleting = false; rolei = (rolei + 1) % roles.length; }
-    }
-    setTimeout(type, deleting ? 60 : 100);
-}
-type();
-
-// ── Particles ─────────────────────────────────────────────────
-const canvas = document.getElementById('particles-canvas');
-const ctx = canvas.getContext('2d');
-let particles = [];
-
-function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
-
-class Particle {
-    constructor() { this.reset(); }
-    reset() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 0.5;
-        this.speedX = (Math.random() - 0.5) * 0.4;
-        this.speedY = (Math.random() - 0.5) * 0.4;
-        this.opacity = Math.random() * 0.35 + 0.05;
-        this.color = Math.random() > 0.5 ? '0,212,255' : '124,58,237';
-    }
-    update() {
-        this.x += this.speedX; this.y += this.speedY;
-        if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) this.reset();
-    }
-    draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${this.color},${this.opacity})`;
-        ctx.fill();
-    }
-}
-
-for (let i = 0; i < 70; i++) particles.push(new Particle());
-
-function animParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => { p.update(); p.draw(); });
-    // Connect particles
-    particles.forEach((a, i) => {
-        particles.slice(i + 1).forEach(b => {
-            const dist = Math.hypot(a.x - b.x, a.y - b.y);
-            if (dist < 100) {
-                ctx.beginPath();
-                ctx.strokeStyle = `rgba(0,212,255,${0.04 * (1 - dist / 100)})`;
-                ctx.lineWidth = 0.5;
-                ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
-                ctx.stroke();
-            }
-        });
-    });
-    requestAnimationFrame(animParticles);
-}
-animParticles();
-
-// ── Skill bar reveal ─────────────────────────────────────────
-function revealSkillBars() {
-    document.querySelectorAll('.skill-bar-fill').forEach(bar => {
-        const w = bar.dataset.width;
-        bar.style.width = w + '%';
-    });
-}
-
-// ── Counters ─────────────────────────────────────────────────
-function animateCounter(el) {
-    const target = parseInt(el.dataset.target);
-    const suffix = el.dataset.suffix || '';
-    let current = 0;
-    const step = target / 60;
-    const timer = setInterval(() => {
-        current = Math.min(current + step, target);
-        el.textContent = (current >= target ? target : Math.floor(current)) + suffix;
-        if (current >= target) clearInterval(timer);
-    }, 25);
-}
-
-// ── Intersection Observer ─────────────────────────────────────
-const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-
-        // Skill bars
-        if (entry.target.id === 'skills' || entry.target.closest('#skills')) {
-            revealSkillBars();
-        }
-        // Counters
-        entry.target.querySelectorAll('[data-target]').forEach(animateCounter);
-
-        io.unobserve(entry.target);
-    });
-}, { threshold: 0.15 });
-
-document.querySelectorAll('.reveal, section').forEach(el => io.observe(el));
-
-// ── Project filter ────────────────────────────────────────────
-document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const cat = btn.dataset.filter;
-        document.querySelectorAll('.project-card').forEach(card => {
-            if (cat === 'all' || card.dataset.cat === cat) {
-                card.classList.remove('hidden');
-            } else {
-                card.classList.add('hidden');
-            }
-        });
-    });
-});
-
-// ── Contact form ──────────────────────────────────────────────
-document.getElementById('contact-form').addEventListener('submit', function (e) {
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav-links');
+  const closeMenu = () => { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); toggle.textContent = 'Menu'; };
+  toggle.addEventListener('click', () => { const open = !nav.classList.contains('open'); nav.classList.toggle('open', open); toggle.setAttribute('aria-expanded', String(open)); toggle.textContent = open ? 'Fechar' : 'Menu'; });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e => { if(e.key === 'Escape' && nav.classList.contains('open')) { closeMenu(); toggle.focus(); } });
+  document.addEventListener('click', e => { if (!e.target.closest('.header')) closeMenu(); });
+  window.matchMedia('(min-width: 761px)').addEventListener('change', closeMenu);
+  document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
+  const cards = [...document.querySelectorAll('.project-card')];
+  document.querySelectorAll('.filter-btn').forEach(button => button.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+    let visible = 0;
+    cards.forEach(card => { card.hidden = button.dataset.filter !== 'all' && card.dataset.cat !== button.dataset.filter; if (!card.hidden) visible++; });
+    document.querySelector('.project-count').textContent = `${visible} projetos nesta seleção`;
+  }));
+  const form = document.querySelector('#raiox-form');
+  if (!form) return;
+  const suggestions = {
+    leadership: 'Mapear decisões recorrentes, responsáveis e critérios de escalonamento. O primeiro passo é entender o que pode ser delegado com segurança.',
+    data: 'Revisar fontes, definições dos indicadores e rotina de atualização. Uma base confiável vem antes de novos painéis.',
+    process: 'Mapear uma rotina repetitiva e suas exceções antes de automatizar. Definir responsável, regra e acompanhamento do piloto.',
+    retention: 'Analisar motivos de cancelamento e qualidade do histórico. Um piloto pode avaliar sinais de risco e ações de retenção.'
+  };
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    const btn = this.querySelector('.btn-submit');
-    btn.textContent = '✅ Mensagem enviada!';
-    btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-    setTimeout(() => {
-        btn.textContent = 'Enviar Mensagem';
-        btn.style.background = '';
-        this.reset();
-    }, 3500);
+    if (!form.reportValidity()) return;
+    const data = new FormData(form);
+    const pain = data.get('pain');
+    const selected = form.elements.pain.selectedOptions[0].textContent;
+    const answers = [`Gargalo: ${selected}`, `Dados: ${data.get('data')}`, `Porte: ${data.get('size')}`, `Retenção: ${data.get('retention')}`];
+    const message = ['Olá Alan! Quero conversar sobre a operação da minha empresa.', `Nome: ${data.get('name')}`, `Empresa: ${data.get('company')}`, `E-mail: ${data.get('email')}`, `WhatsApp: ${data.get('phone')}`, ...answers, `Prioridade inicial: ${suggestions[pain]}`].join('\n');
+    const result = document.querySelector('#assessment-result');
+    result.querySelector('p').textContent = suggestions[pain];
+    result.querySelector('a').href = `https://wa.me/5519995483158?text=${encodeURIComponent(message)}`;
+    result.hidden = false;
+    const status = document.querySelector('#form-status');
+    const button = form.querySelector('button[type=submit]');
+    button.disabled = true;
+    status.textContent = 'Registrando seu pedido de contato…';
+    const payload = { name: data.get('name'), company: data.get('company'), email: data.get('email'), phone: data.get('phone'), pain, answers, consent: true, source: 'site_raiox', campaign: 'raiox_operacional_2026' };
+    // Keep the existing public CRM contract. Never contact the visitor's localhost.
+    let saved = false;
+    for (const url of ['/api/public/leads', 'https://comercial.amconsultoria.tech/api/public/leads']) {
+      try {
+        const response = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload), signal: AbortSignal.timeout(7000) });
+        if (response.ok) { saved = true; break; }
+      } catch (_) { /* The explicit WhatsApp link remains available. */ }
+    }
+    status.textContent = saved ? 'Pedido de contato registrado. Se preferir, envie também o resumo pelo WhatsApp abaixo.' : 'Não foi possível registrar o pedido no site. Use o botão abaixo para abrir o resumo no WhatsApp e enviar a mensagem.';
+    button.disabled = false;
+    result.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+  });
 });
-
-// ── Matrix Rain Canvas ────────────────────────────────────────
-(function initMatrix() {
-    const mc = document.getElementById('matrix-canvas');
-    if (!mc) return;
-    const mctx = mc.getContext('2d');
-    const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホABCDEF0123456789</>{}[]';
-    let cols;
-
-    function resize() {
-        mc.width = window.innerWidth;
-        mc.height = window.innerHeight;
-        cols = Math.floor(mc.width / 16);
-        drops.length = 0;
-        for (let i = 0; i < cols; i++) drops.push(Math.random() * -100);
-    }
-
-    const drops = [];
-    resize();
-    window.addEventListener('resize', resize);
-
-    function drawMatrix() {
-        mctx.fillStyle = 'rgba(7,11,19,0.05)';
-        mctx.fillRect(0, 0, mc.width, mc.height);
-        mctx.font = '13px monospace';
-        for (let i = 0; i < drops.length; i++) {
-            const c = chars[Math.floor(Math.random() * chars.length)];
-            const hue = Math.random() > 0.8 ? '0,212,255' : '16,185,129';
-            mctx.fillStyle = `rgba(${hue},0.7)`;
-            mctx.fillText(c, i * 16, drops[i] * 16);
-            if (drops[i] * 16 > mc.height && Math.random() > 0.975) drops[i] = 0;
-            drops[i] += 0.5;
-        }
-    }
-    setInterval(drawMatrix, 60);
-})();
-
